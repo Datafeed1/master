@@ -10,7 +10,7 @@ export default function schedule() {
         <SafeAreaView style={styles.container}>
             <ScrollView>
             <Text
-            style={{paddingTop:10, fontSize:18}}>When are you avaible?</Text>
+            style={{paddingTop:10, fontSize:18}}>When are you available?</Text>
 
             {data.map((item,key) => {
               return(

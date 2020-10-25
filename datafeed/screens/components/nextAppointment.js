@@ -9,7 +9,7 @@ class upComing extends Component{
         return (
             <View style={styles.upComing}>
                 <Text style={styles.titleText}>
-                UPCOMING APPOINTMNET
+                UPCOMING APPOINTMENT
                 </Text>
                 <View style={styles.titleCard}>
                     <View style={styles.titlecontainer}>
