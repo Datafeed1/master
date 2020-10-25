@@ -7,7 +7,13 @@ export default function Menu() {
     const navigation = useNavigation()
     return (
         <View style={styles.container}>
-            <Text>This is menu</Text>
+            <View>
+            <Button title = {"Account Settings"}/>
+            </View>
+
+            <View>
+            <Button title = {"Log Out"} color = "red"/>
+            </View>
         </View>
       
     )

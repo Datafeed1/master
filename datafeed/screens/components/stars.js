@@ -6,7 +6,7 @@ class CustomStarExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      starCount: 2.5
+      starCount: 3
     };
   }
 
@@ -25,10 +25,11 @@ class CustomStarExample extends Component {
         fullStar={'ios-star'}
         halfStar={'ios-star-half'}
         iconSet={'Ionicons'}
+        starStyle={{paddingHorizontal: 10}}
         maxStars={5}
         rating={this.state.starCount}
         selectedStar={(rating) => this.onStarRatingPress(rating)}
-        fullStarColor={'orange'}
+        fullStarColor={'#ff7900'}
       />
     );
   }
