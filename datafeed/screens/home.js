@@ -7,6 +7,7 @@ export default function Home() {
     const navigation = useNavigation()
     return (
         <View style={styles.container}>
+
             <Button
             title = "Login"
             onPress = {() => navigation.navigate("Login")}
