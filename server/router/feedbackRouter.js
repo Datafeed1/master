@@ -8,7 +8,7 @@ const router = express.Router();
 router.post('/:id', 
   feedbackController.postFeedback,
   (req, res) => {
-    return res.status(200).json({complete:'completed'});
+    return res.sendStatus(200);
   }
 );
 

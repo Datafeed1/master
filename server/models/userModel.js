@@ -13,6 +13,8 @@ const userSchema = new Schema({
     name : {type: String, required: true},
     email : {type: String, required: true},
     password : {type: String, required: true},
+    schedule : {type: Array, required: false},
+    currentSchedule: {type: Object, required: false},
     address : {type: String, required: true},
     user_type : {type: String, required: true},
     reviews : {type: Array, required: false},
