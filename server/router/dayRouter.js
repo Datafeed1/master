@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const appointmentController = require('../controller/appointmentController');
+const dayController = require('../controller/dayController');
 router.get('/:id', 
-  appointmentController.getAppointment,
+  dayController.getCurrentDay,
   (req, res) => {
-    return res.status(200).json(res.locals.currentEvent);
+    return res.status(200).json(res.locals.payload);
   }
 );
 router.post('/:id', 
-  appointmentController.addAppointment,
+  dayController.addDays,
   (req, res) => {
     return res.sendStatus(200);
   }

@@ -12,6 +12,7 @@ const signupRouter = require('./router/signupRouter.js');
 const loginRouter = require('./router/loginRouter.js');
 const dataRouter = require('./router/dataRouter.js');
 const appointmentRouter = require('./router/appointmentRouter.js');
+const dayRouter = require('./router/dayRouter');
 const mongoose = require('mongoose');
 app.use(cookieParser());
 app.use(cors());
@@ -32,6 +33,7 @@ mongoose.connection.once('open', () => {
 console.log('fails there')
 app.use('/signup', signupRouter)
 console.log('fails at 24')
+app.use('/getday', dayRouter)
 app.use('/login', loginRouter)
 app.use('/feedback', feedbackRouter)
 app.use('/getdata', dataRouter)
