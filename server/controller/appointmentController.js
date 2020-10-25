@@ -38,7 +38,10 @@ appointmentController.addAppointment = (req, res, next) => {
     let userId = req.params.id
     let startTime= req.body.startTime
     let endTime = req.body.endTime
-    let date = req.body.date
+    let date;
+    if(typeof req.body.date === 'string') {
+        date = req.body.date.toLowerCase();
+    }
     let repeat = req.body.repeat
     let updateObject = {startTime: startTime, endTime: endTime, date: date, repeat: repeat}
     Users.findOneAndUpdate({userId: userId},{$push: {schedule: updateObject}}, {new:true} ,(err, data) => {
@@ -49,5 +52,4 @@ appointmentController.addAppointment = (req, res, next) => {
     })
 
 }
-
 module.exports = appointmentController

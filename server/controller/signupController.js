@@ -2,7 +2,7 @@
 const signupController = {};
 
 const Users = require('../models/userModel')
-
+const Organizations = require('../models/organizationModel')
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcryptjs');
 const salt = bcrypt.genSaltSync(10)
