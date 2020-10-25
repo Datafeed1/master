@@ -1,60 +1,18 @@
 import React, {Component} from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View, ScrollView} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Button, StyleSheet, Text, View, ScrollView,Alert} from 'react-native';
 import StarRating from './components/stars'
+import NextAppointment from './components/nextAppointment'
+import { SafeAreaView} from 'react-native-safe-area-context';
 
 export default function Main() {
   return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <ScrollView>
-          <View style={styles.upComing}>
-            <Text style={styles.titleText}>
-              UPCOMING APPOINTMNET
-            </Text>
-            <View style={styles.titleCard}>
-              <View style={styles.titlecontainer}>
-                <Text 
-                  style={{color:"#fff",
-                  fontSize:18,
-                  paddingLeft:40,
-                  paddingTop:20}}>
-                  MON
-                </Text>
-                <Text 
-                  style={{color:"#fff",
-                  fontSize:24,
-                  paddingLeft:40,}}>
-                  26
-                </Text>
-              </View>
-              <View style={styles.titlecontainer,{flex:2}}>
-                <Text 
-                  style={{color:"#fff",
-                  fontSize:18,
-                  paddingLeft:10,
-                  paddingTop:20}}>
-                  8:00 AM - 5:00 PM
-                </Text>
-                <Text 
-                  style={{color:"#fff",
-                  fontSize:14,
-                  paddingLeft:10,}}>
-                    Food Pantry
-                </Text>
-                <Text 
-                  style={{color:"#fff",
-                  fontSize:14,
-                  paddingLeft:10,}}>
-                    sample location
-                </Text>
-              </View>
-            </View>
-          </View>
+          <NextAppointment style={{flex:.5}}/>
           <View style={styles.review}>
             <View style={styles.titleText}> 
               <Text style={styles.titleText}>
-                What Did you think of your experince at Food Panry?
+                What Did you think of your experince at Food Pantry?
               </Text>
               <Text style={styles.titleText}>
                 Rate your experience
@@ -84,59 +42,53 @@ export default function Main() {
               </Text>
               <StarRating/>
             </View>
-            <View style={styles.reviewcontainer}>
-              <Button title={"Additional comments"}/>
+            <View style={styles.reviewcontainer,{flexDirection:"row"}}>
+              <View style={{flex:1,paddingHorizontal:20}}>
+              <Button color="#ff7900" title={"Additional comments"}/>
+              </View>
+              <View style={{flex:.5,paddingHorizontal:20}}>
+              <Button color="#ff7900" title="Submit" onPress =
+              {() => Alert.alert(
+                'Submitted',
+                'Thank you for the input!',
+                [{text: 'OK'}]
+              )}/>
+              </View>
             </View>
-            <View style={styles.reviewcontainer}>
-              <Button title={"Submit"}/>
-            </View>
+
           </View>
         </ScrollView>
 
-      </View>
+      </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: ,
     // alignItems: 'center',
     // justifyContent: 'center',
-  },
-  upComing: {
-    flex: .3,
-    backgroundColor: '#fff',
-    // alignItems: '',
-    // justifyContent: 'center',
-  },
-  titleCard: {
-    flex: 1,
-    flexDirection: "row",
-    backgroundColor: '#8bc34a',
-    color: "#fff"
+    // paddingTop:  
   },
   titleText: {
     fontSize: 18,
-    color: 'orange',
+    color: '#ff7900',
     paddingLeft: 20,
-    paddingTop: 10
-  },
-  titlecontainer: {
-    flex: 1,
-    backgroundColor: '#8bc34a',
-    color: "#fff"
+    // paddingTop: 10
   },
   review: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     paddingTop: 20,
   },
   reviewcontainer: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     paddingTop:20,  
+    paddingBottom:20,
     justifyContent: 'center',
+    // borderBottomWidth:  StyleSheet.hairlineWidth
   }
 });

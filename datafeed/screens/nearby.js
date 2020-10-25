@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export default function Menu() {
+export default function nearby() {
     const navigation = useNavigation()
     return (
         <View style={styles.container}>
-            <View>
-            <Button title = {"Account Settings"}/>
-            </View>
-
-            <View>
-            <Button title = {"Log Out"} color = "red"/>
-            </View>
+              {/* <MapView
+                initialRegion={{
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+                }} */}
+            {/* /> */}
+            <Text>Work in Progress</Text>
         </View>
       
     )

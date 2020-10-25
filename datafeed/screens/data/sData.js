@@ -1,20 +1,20 @@
 export default [
 {
-    day: ["mon ","tue"],
-    begin: "8:00",
-    end: "12:00",
+    day: ["Mon "],
+    begin: "9:00AM",
+    end: "12:00PM",
     repeat: false
 },
 {
-    day: ["mon ","tue"],
-    begin: "8:00",
-    end: "12:00",
+    day: ["Tue "],
+    begin: "3:00PM",
+    end: "4:00PM",
     repeat: false
 },
 {
-    day: ["mon ","tue"],
-    begin: "8:00",
-    end: "12:00",
+    day: ["Fri, Sat"],
+    begin: "8:00AM",
+    end: "12:00PM",
     repeat: false
 }
 ]

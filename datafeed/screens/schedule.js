@@ -1,36 +1,44 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Button, StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import data from './data/sData'
-
+// import Collaspible from 'react-native-collapsible'
 
 export default function schedule() {
-    const [time, setTime] = useState(null) 
     return (
-        <View style={styles.container}>
-          {data.map((item) => {
-            return(
-              <View style = {styles.cards}>
+        <SafeAreaView style={styles.container}>
+            <ScrollView>
+            <Text
+            style={{paddingTop:10, fontSize:18}}>When are you avaible?</Text>
 
-                <View style = {styles.timecontainer}>
-                  <Text>{item.begin} {item.end}</Text> 
-                  <Text>{item.day}</Text>
-                </View>
+            {data.map((item,key) => {
+              return(
+                // <Collapsible collapsed={isCollapsed}>
 
-                <View style = {styles.editcontainer}>
-                  <Button title = {"edit"}/>
-                </View>
+                  <View style = {styles.cards}>
+                    <View style = {styles.timecontainer}>
+                      <Text style={styles.time}>{item.begin} {item.end}</Text> 
+                      <Text>{item.day}</Text>
+                    </View>
 
-                <View sytle = {styles.deletecontainer}>
-                  <Button title = {"delete"}/>
-                </View>
+                    <View style = {styles.editcontainer}>
+                      <Button title = {"edit"}/>
+                    </View>
 
-              </View>
-            )
-          })}
-          <Button title={"add"}/>
-        </View>
+                    <View sytle = {styles.deletecontainer}>
+                      <Button color = "red" title = {"delete"}/>
+                    </View>
+
+                  </View>
+                // {/* </Collapsible> */}
+
+              )
+            })}
+            <Button title={"add"}/>
+
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 
@@ -40,41 +48,34 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
-    // paddingTop: 10,
+    paddingTop: 50,
     paddingHorizontal: 20,
   },
   cards: {
     flex: 1,
     flexDirection: "row",
     backgroundColor: "white",
-    // alignItems: 'center',
-    // justifyContent: 'center',
     paddingTop: 20,
+    paddingBottom:20,
     maxHeight: 100,
     paddingHorizontal: 20,
   },
   editcontainer: {
-    flex: .5,
+    flex: .35,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // paddingTop: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 5,
   },
   deletecontainer: {
-    flex: .5,
+    flex: .35,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // paddingTop: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
   },
   timecontainer: {
     flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // paddingTop: 10,
     paddingHorizontal: 20,
   },
+  time:{
+    fontSize: 18
+  }
 });

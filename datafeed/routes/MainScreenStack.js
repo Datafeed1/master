@@ -8,7 +8,8 @@ const Main = createStackNavigator();
 export default function MainScreen() {
     return (
         // <NavigationContainer>
-        <Main.Navigator>
+        <Main.Navigator
+            screenOptions={{headerShown: false}}>
             <Main.Screen name="Main" component={main}/>
         </Main.Navigator>
         // </NavigationContainer>
